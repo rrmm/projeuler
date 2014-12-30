@@ -1,0 +1,23 @@
+100^2 =  10000 smallest  
+999^2 = 998001 largest multiple of two 3 digit numbers
+
+so either:
+x0==x4 && x1==x3 
+or 
+x0==x5 && x1==x4 && x2==x3
+
+a b c
+x y z
+-----
+           za  zb  zc
+       ya  yb  yc
+   xa  xb  xc
+-------------------
+x5 x4  x3  x2   x1  x0
+
+x0 = (z*c) % 10
+x1 = ((z*c)//10 + (z*b + y*c))%10
+x2 = (((z*c)//10 + (z*b + y*c))//10 + (z*a + y*b + x*c)) % 10
+x3 = ((((z*c)//10 + (z*b + y*c))//10 + (z*a + y*b + x*c)) //10 + (y*a + x*b))%10
+x4 = (((((z*c)//10 + (z*b + y*c))//10 + (z*a + y*b + x*c)) //10 + (y*a + x*b))//10 + x*a)%10
+x5 = ((((((z*c)//10 + (z*b + y*c))//10 + (z*a + y*b + x*c)) //10 + (y*a + x*b))//10 + x*a))//10
